@@ -8,22 +8,50 @@ body {
   margin: 0;
   padding: 0;
   text-align: center;
-  background: linear-gradient(to right, #ff758c, #ff7eb3);
+  background: linear-gradient(to right, #ff6a88, #ff99ac);
   color: white;
   font-family: Arial;
+  overflow: hidden;
 }
 
 .content {
-  margin-top: 100px;
+  position: absolute;
+  top: 35%;
+  width: 100%;
 }
 
+h1 {
+  font-size: 36px;
+}
+
+/* Typing text */
+#message {
+  font-size: 22px;
+  margin-top: 20px;
+  min-height: 40px;
+}
+
+/* Button */
 button {
+  margin-top: 20px;
   padding: 12px 25px;
   font-size: 18px;
   background: white;
   color: red;
   border: none;
-  border-radius: 10px;
+  border-radius: 12px;
+}
+
+/* Floating hearts */
+.heart {
+  position: absolute;
+  font-size: 20px;
+  animation: float 6s linear infinite;
+}
+
+@keyframes float {
+  0% {transform: translateY(100vh);}
+  100% {transform: translateY(-10vh);}
 }
 </style>
 
@@ -32,40 +60,76 @@ button {
 <body>
 
 <div class="content">
-  <h1>Happy Birthday My Princess ❤️</h1>
-  <p>Click below for something special 💖</p>
+  <h1>🎂 Happy Birthday My Princess ❤️</h1>
+  <p>Tap below and feel my love 💖</p>
 
-  <button onclick="showMessages()">Tap for Love 💌</button>
+  <button onclick="startLove()">Start Love 💌</button>
+
+  <div id="message"></div>
 </div>
 
 <script>
-function showMessages() {
 
-  var messages = [
-    "🎂 Happy Birthday My Princess ❤️",
-    "I love you more than anything 💖",
-    "You are my heart and my soul 💕",
-    "I promise to stay with you forever 💍",
-    "You are my dream come true 😍",
-    "My life is beautiful because of you 💫",
-    "I can't imagine my life without you 💔",
-    "You are my future wife ❤️",
-    "Every moment with you is special 💞",
-    "I will always love you forever 💖"
-  ];
+var messages = [
+  "I love you so much ❤️",
+  "You are my heart 💖",
+  "You are my dream girl 😍",
+  "My life is incomplete without you 💕",
+  "I promise to stay forever 💍",
+  "You are my happiness 💫",
+  "I can't live without you 💔",
+  "You are my future wife ❤️",
+  "Every moment with you is special 💞",
+  "I will always love you forever 💖"
+];
 
-  var i = 0;
+function startLove() {
+  let i = 0;
+  let msgBox = document.getElementById("message");
+
+  function typeText(text, callback) {
+    let j = 0;
+    msgBox.innerHTML = "";
+
+    function typing() {
+      if (j < text.length) {
+        msgBox.innerHTML += text.charAt(j);
+        j++;
+        setTimeout(typing, 50);
+      } else {
+        setTimeout(callback, 1500);
+      }
+    }
+
+    typing();
+  }
 
   function nextMessage() {
     if (i < messages.length) {
-      alert(messages[i]);
-      i++;
-      setTimeout(nextMessage, 500);
+      typeText(messages[i], () => {
+        i++;
+        nextMessage();
+      });
     }
   }
 
   nextMessage();
 }
+
+// hearts animation
+setInterval(function() {
+  var heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "💖";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = (10 + Math.random() * 25) + "px";
+  document.body.appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  }, 6000);
+}, 300);
+
 </script>
 
 </body>
