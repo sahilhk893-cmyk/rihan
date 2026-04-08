@@ -1,29 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Happy Birthday ❤️</title>
+<title>My Love ❤️</title>
 
 <style>
 body {
   margin: 0;
   padding: 0;
   text-align: center;
-  background: linear-gradient(to right, #ff758c, #ff7eb3);
+  background: linear-gradient(to right, #ff4e50, #fc913a);
   color: white;
   font-family: Arial;
+  overflow: hidden;
 }
 
 .content {
-  margin-top: 100px;
+  position: absolute;
+  top: 40%;
+  width: 100%;
 }
 
-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  background: white;
-  color: red;
-  border: none;
-  border-radius: 10px;
+/* Hearts */
+.heart {
+  position: absolute;
+  font-size: 20px;
+  animation: float 6s linear infinite;
+}
+
+@keyframes float {
+  0% {transform: translateY(100vh);}
+  100% {transform: translateY(-10vh);}
 }
 </style>
 
@@ -32,16 +38,29 @@ button {
 <body>
 
 <div class="content">
-  <h1>🎂 Happy Birthday My Love ❤️</h1>
-  <p>You are my everything 💖</p>
-
-  <button onclick="showLove()">Tap for Surprise 💌</button>
+  <h1>Happy Birthday My Love ❤️</h1>
+  <p>You are my life, my everything 💖</p>
 </div>
 
 <script>
-function showLove() {
-  alert("I Love You Forever ❤️");
+// Auto popup
+window.onload = function() {
+  alert("🎂 Happy Birthday My Jaan ❤️ I Love You Forever 💖");
 }
+
+// Hearts animation
+setInterval(function() {
+  var heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "💖";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = (10 + Math.random() * 25) + "px";
+  document.body.appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  }, 6000);
+}, 300);
 </script>
 
 </body>
