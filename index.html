@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>My Princess ❤️</title>
+<title>My Babu ❤️</title>
 
 <style>
 body {
@@ -24,14 +24,12 @@ h1 {
   font-size: 36px;
 }
 
-/* Typing text */
 #message {
   font-size: 22px;
   margin-top: 20px;
   min-height: 40px;
 }
 
-/* Button */
 button {
   margin-top: 20px;
   padding: 12px 25px;
@@ -42,7 +40,7 @@ button {
   border-radius: 12px;
 }
 
-/* Floating hearts */
+/* hearts */
 .heart {
   position: absolute;
   font-size: 20px;
@@ -60,8 +58,8 @@ button {
 <body>
 
 <div class="content">
-  <h1>🎂 Happy Birthday My Princess ❤️</h1>
-  <p>Tap below and feel my love 💖</p>
+  <h1>🎂 Happy Birthday My Babu ❤️</h1>
+  <p>Tap below and feel my heart 💖</p>
 
   <button onclick="startLove()">Start Love 💌</button>
 
@@ -71,16 +69,16 @@ button {
 <script>
 
 var messages = [
-  "I love you so much ❤️",
-  "You are my heart 💖",
-  "You are my dream girl 😍",
-  "My life is incomplete without you 💕",
-  "I promise to stay forever 💍",
-  "You are my happiness 💫",
-  "I can't live without you 💔",
-  "You are my future wife ❤️",
+  "Babu ❤️ I love you so much 💖",
+  "You are my life, my everything 💕",
+  "I can't imagine my world without you 😔",
+  "You are my happiness and my peace 💫",
   "Every moment with you is special 💞",
-  "I will always love you forever 💖"
+  "I promise to stay with you forever 💍",
+  "You are not just my love, you are my soul ❤️",
+  "Babu... I'm really sorry 😔",
+  "Please forgive me, I never want to hurt you 💔",
+  "I love you more than words can say 💖"
 ];
 
 function startLove() {
@@ -110,6 +108,9 @@ function startLove() {
         i++;
         nextMessage();
       });
+    } else {
+      // final message
+      msgBox.innerHTML = "❤️ I LOVE YOU BABU FOREVER ❤️";
     }
   }
 
