@@ -8,39 +8,54 @@ body {
   margin: 0;
   padding: 0;
   text-align: center;
-  background: linear-gradient(to right, #ff6a88, #ff99ac);
+  background: black;
   color: white;
   font-family: Arial;
   overflow: hidden;
 }
 
-.content {
+/* Fade Animation */
+.fade {
+  animation: fadeIn 2s ease-in;
+}
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+/* Start Screen */
+#startScreen {
+  position: absolute;
+  top: 40%;
+  width: 100%;
+}
+
+button {
+  padding: 12px 25px;
+  font-size: 18px;
+  background: pink;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 0 10px pink;
+}
+
+/* Main */
+#main {
+  display: none;
   position: absolute;
   top: 35%;
   width: 100%;
 }
 
-h1 {
-  font-size: 36px;
-}
-
+/* Message */
 #message {
-  font-size: 22px;
+  font-size: 24px;
   margin-top: 20px;
   min-height: 40px;
+  text-shadow: 0 0 10px white;
 }
 
-button {
-  margin-top: 20px;
-  padding: 12px 25px;
-  font-size: 18px;
-  background: white;
-  color: red;
-  border: none;
-  border-radius: 12px;
-}
-
-/* hearts */
+/* Hearts */
 .heart {
   position: absolute;
   font-size: 20px;
@@ -51,34 +66,65 @@ button {
   0% {transform: translateY(100vh);}
   100% {transform: translateY(-10vh);}
 }
+
+/* Final Screen */
+#final {
+  display: none;
+  position: absolute;
+  top: 40%;
+  width: 100%;
+  font-size: 45px;
+  color: pink;
+  animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+  from {transform: scale(1);}
+  to {transform: scale(1.2);}
+}
 </style>
 
 </head>
 
 <body>
 
-<div class="content">
+<!-- Start -->
+<div id="startScreen" class="fade">
+  <h1>💖 For My Babu 💖</h1>
+  <button onclick="start()">Enter 💌</button>
+</div>
+
+<!-- Main -->
+<div id="main" class="fade">
   <h1>🎂 Happy Birthday My Babu ❤️</h1>
-  <p>Tap below and feel my heart 💖</p>
-
-  <button onclick="startLove()">Start Love 💌</button>
-
+  <p>Close your eyes & feel my love 💖</p>
   <div id="message"></div>
+</div>
+
+<!-- Final -->
+<div id="final">
+  ❤️ I LOVE YOU BABU FOREVER ❤️
 </div>
 
 <script>
 
+function start() {
+  document.getElementById("startScreen").style.display = "none";
+  document.getElementById("main").style.display = "block";
+  startLove();
+}
+
 var messages = [
   "Babu ❤️ I love you so much 💖",
-  "You are my life, my everything 💕",
-  "I can't imagine my world without you 😔",
-  "You are my happiness and my peace 💫",
-  "Every moment with you is special 💞",
-  "I promise to stay with you forever 💍",
-  "You are not just my love, you are my soul ❤️",
+  "You are my heart and soul 💕",
+  "My world is nothing without you 😔",
+  "Every moment with you is magic 💫",
+  "You are my happiness 💞",
+  "I promise to stay forever 💍",
+  "You are my everything ❤️",
   "Babu... I'm really sorry 😔",
-  "Please forgive me, I never want to hurt you 💔",
-  "I love you more than words can say 💖"
+  "Please forgive me 💔",
+  "I never want to lose you 💖"
 ];
 
 function startLove() {
@@ -93,7 +139,7 @@ function startLove() {
       if (j < text.length) {
         msgBox.innerHTML += text.charAt(j);
         j++;
-        setTimeout(typing, 50);
+        setTimeout(typing, 40);
       } else {
         setTimeout(callback, 1500);
       }
@@ -109,15 +155,19 @@ function startLove() {
         nextMessage();
       });
     } else {
-      // final message
-      msgBox.innerHTML = "❤️ I LOVE YOU BABU FOREVER ❤️";
+      showFinal();
     }
   }
 
   nextMessage();
 }
 
-// hearts animation
+function showFinal() {
+  document.getElementById("main").style.display = "none";
+  document.getElementById("final").style.display = "block";
+}
+
+// Hearts
 setInterval(function() {
   var heart = document.createElement("div");
   heart.className = "heart";
