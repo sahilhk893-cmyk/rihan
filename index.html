@@ -1,37 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>My Love ❤️</title>
+<title>Happy Birthday ❤️</title>
 
 <style>
 body {
   margin: 0;
   padding: 0;
   text-align: center;
-  background: linear-gradient(to right, #ff4e50, #fc913a);
+  background: linear-gradient(to right, #ff758c, #ff7eb3);
   color: white;
   font-family: Arial;
-  overflow: hidden;
 }
 
-/* Floating Hearts */
-.heart {
-  position: absolute;
-  color: pink;
-  font-size: 20px;
-  animation: float 5s linear infinite;
-}
-
-@keyframes float {
-  0% {transform: translateY(100vh);}
-  100% {transform: translateY(-10vh);}
-}
-
-/* Center content */
 .content {
-  position: absolute;
-  top: 40%;
-  width: 100%;
+  margin-top: 100px;
 }
 
 button {
@@ -49,31 +32,15 @@ button {
 <body>
 
 <div class="content">
-  <h1>Happy Birthday My Love ❤️</h1>
-  <p>You are my heart, my soul, my everything 💖</p>
+  <h1>🎂 Happy Birthday My Love ❤️</h1>
+  <p>You are my everything 💖</p>
 
   <button onclick="showLove()">Tap for Surprise 💌</button>
 </div>
 
-  
 <script>
-// Heart animation
-setInterval(function() {
-  var heart = document.createElement("div");
-  heart.className = "heart";
-  heart.innerHTML = "❤️";
-  heart.style.left = Math.random() * 100 + "vw";
-  heart.style.fontSize = (10 + Math.random() * 20) + "px";
-  document.body.appendChild(heart);
-
-  setTimeout(() => {
-    heart.remove();
-  }, 5000);
-}, 300);
-
-// Button message
 function showLove() {
-  alert("I Love You Forever ❤️ My Jaan 💖");
+  alert("I Love You Forever ❤️");
 }
 </script>
 
