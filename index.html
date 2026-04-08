@@ -1,17 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Happy Birthday ❤️</title>
+<title>My Love ❤️</title>
 
 <style>
 body {
-  background: linear-gradient(to right, pink, purple);
-  color: white;
+  margin: 0;
+  padding: 0;
   text-align: center;
+  background: linear-gradient(to right, #ff4e50, #fc913a);
+  color: white;
   font-family: Arial;
+  overflow: hidden;
 }
-h1 {
-  font-size: 40px;
+
+/* Floating Hearts */
+.heart {
+  position: absolute;
+  color: pink;
+  font-size: 20px;
+  animation: float 5s linear infinite;
+}
+
+@keyframes float {
+  0% {transform: translateY(100vh);}
+  100% {transform: translateY(-10vh);}
+}
+
+/* Center content */
+.content {
+  position: absolute;
+  top: 40%;
+  width: 100%;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background: white;
+  color: red;
+  border: none;
+  border-radius: 10px;
 }
 </style>
 
@@ -19,24 +48,31 @@ h1 {
 
 <body>
 
-<h1>Happy Birthday My Love ❤️</h1>
-<p>You are my life 💖</p>
+<div class="content">
+  <h1>Happy Birthday My Love ❤️</h1>
+  <p>You are my life, my heart, my everything 💖</p>
 
-<br>
-
-<img src="photo.jpg" width="250">
-
-<br><br>
-
-<button onclick="showLove()">Click for Surprise 💖</button>
-
-<audio autoplay loop>
-  <source src="song.mp3" type="audio/mpeg">
-</audio>
+  <button onclick="showLove()">Click for Surprise 💌</button>
+</div>
 
 <script>
+// Heart animation
+setInterval(function() {
+  var heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "❤️";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = (10 + Math.random() * 20) + "px";
+  document.body.appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  }, 5000);
+}, 300);
+
+// Button message
 function showLove() {
-  alert("I Love You Forever ❤️");
+  alert("I Love You Forever ❤️ My Jaan 💖");
 }
 </script>
 
