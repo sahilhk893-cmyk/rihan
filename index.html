@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Baby 💕</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-animation"></div>
+    
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1 class="title">Happy Birthday Baby! 💕</h1>
+            <p class="subtitle">You make every day special</p>
+        </div>
+
+        <!-- Countdown Timer -->
+        <div class="countdown-section">
+            <h2>Time Until Your Special Day</h2>
+            <div class="countdown" id="countdown">
+                <div class="countdown-item">
+                    <span class="countdown-number" id="days">0</span>
+                    <span class="countdown-label">Days</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="hours">0</span>
+                    <span class="countdown-label">Hours</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="minutes">0</span>
+                    <span class="countdown-label">Minutes</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="seconds">0</span>
+                    <span class="countdown-label">Seconds</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Message Section -->
+        <div class="message-section">
+            <h2>From the Bottom of My Heart</h2>
+            <div class="main-message">
+                <p>You are the most amazing person I know. Your smile brightens my darkest days, and your love makes me the happiest man alive.</p>
+                <p>Thank you for being you, for loving me, and for making every moment special.</p>
+                <p class="signature">Happy Birthday to the love of my life! 💕</p>
+            </div>
+        </div>
+
+        <!-- Photo Gallery -->
+        <div class="gallery-section">
+            <h2>Our Beautiful Memories</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/250x250?text=Memory+1" alt="Our memory">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/250x250?text=Memory+2" alt="Our memory">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/250x250?text=Memory+3" alt="Our memory">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/250x250?text=Memory+4" alt="Our memory">
+                </div>
+            </div>
+        </div>
+
+        <!-- Wishes Section -->
+        <div class="wishes-section">
+            <h2>Birthday Wishes from Friends & Family</h2>
+            <div class="wishes-container" id="wishesContainer">
+                <div class="wish-card">
+                    <p class="wish-text">"You're an amazing person and deserve all the happiness in the world!"</p>
+                    <p class="wish-author">- Your Loving Boyfriend 💕</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add Wish Form -->
+        <div class="add-wish-section">
+            <h2>Add Your Birthday Wish</h2>
+            <form id="wishForm" class="wish-form">
+                <input type="text" id="wishName" placeholder="Your name" required>
+                <textarea id="wishText" placeholder="Write your birthday wish here..." rows="4" required></textarea>
+                <button type="submit" class="btn-submit">Send Wish 💌</button>
+            </form>
+        </div>
+
+        <!-- Music Player -->
+        <div class="music-section">
+            <button id="musicToggle" class="music-btn">🎵 Play Birthday Music</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
